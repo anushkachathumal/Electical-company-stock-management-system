@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8938DCA8-C665-4E00-9867-966E85199D6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>DBLotVbnet.APPLICATION_FORM</StartupObject>
+    <RootNamespace>DBLotVbnet</RootNamespace>
+    <AssemblyName>DBLotVbnet</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ApplicationIcon>Administrative Tools.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DBLotVbnet.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DBLotVbnet.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\CrystalDecisions.CrystalReports.Engine\10.5.3700.0__692fbea5521e1304\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportSource\10.5.3700.0__692fbea5521e1304\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\CrystalDecisions.Shared\10.5.3700.0__692fbea5521e1304\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\Program Files (x86)\Business Objects\Common\2.8\managed\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinInkProvider.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.Ink, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Infragistics2.Documents.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\Common\Infragistics2.Documents.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Shared.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.AppStylistSupport.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.AppStylistSupport.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.Misc.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinDataSource.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDock.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinDock.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinEditors.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinExplorerBar.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinGrid.DocumentExport.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinGrid.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinListBar.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinListBar.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinListView.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinListView.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinSchedule.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinStatusBar.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinTabbedMdi.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinTabControl.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinToolbars.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTree.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.UltraWinTree.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v8.2, Version=8.2.20082.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\NetAdvantage for .NET 2008 Vol. 2 CLR 2.0\windows forms\bin\Infragistics2.Win.v8.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrator\frmBackup.designer.vb">
+      <DependentUpon>frmBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\frmBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_TO_Z\APPLICATION FORM.Designer.vb">
+      <DependentUpon>APPLICATION FORM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="A_TO_Z\APPLICATION FORM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_TO_Z\DESIGNATION.Designer.vb">
+      <DependentUpon>DESIGNATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="A_TO_Z\DESIGNATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_TO_Z\EDUCATION_QUALIFICATION.Designer.vb">
+      <DependentUpon>EDUCATION_QUALIFICATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="A_TO_Z\EDUCATION_QUALIFICATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common.vb" />
+    <Compile Include="CommonPrint.vb" />
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCompany_Cnt.Designer.vb">
+      <DependentUpon>frmCompany_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCompany_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCustomer_Cnt.Designer.vb">
+      <DependentUpon>frmCustomer_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCustomer_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCus_Discount.Designer.vb">
+      <DependentUpon>frmCus_Discount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmCus_Discount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmDiscount_1.Designer.vb">
+      <DependentUpon>frmDiscount_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmDiscount_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmDiscount_2.Designer.vb">
+      <DependentUpon>frmDiscount_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmDiscount_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmLocation_Cnt.Designer.vb">
+      <DependentUpon>frmLocation_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmLocation_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmRoot_Cnt.Designer.vb">
+      <DependentUpon>frmRoot_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmRoot_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmSales_Ref_Cnt.Designer.vb">
+      <DependentUpon>frmSales_Ref_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT SYSTEM_ADMIN\frmSales_Ref_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmElectrician_cnt.Designer.vb">
+      <DependentUpon>frmElectrician_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmElectrician_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmGRN_Budget.Designer.vb">
+      <DependentUpon>frmGRN_Budget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmGRN_Budget.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmSupplier_Cnt.Designer.vb">
+      <DependentUpon>frmSupplier_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmSupplier_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmVehicle_Cnt.Designer.vb">
+      <DependentUpon>frmVehicle_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_MASTER\frmVehicle_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmBom_Creation.Designer.vb">
+      <DependentUpon>frmBom_Creation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmBom_Creation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmCatogery_cnt.Designer.vb">
+      <DependentUpon>frmCatogery_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmCatogery_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmItem_cnt.Designer.vb">
+      <DependentUpon>frmItem_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmItem_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmRow_Category_cntvb.Designer.vb">
+      <DependentUpon>frmRow_Category_cntvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmRow_Category_cntvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Mobile.Designer.vb">
+      <DependentUpon>frmStockBalance_Mobile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Mobile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Product.Designer.vb">
+      <DependentUpon>frmStockBalance_Product.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Product.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Rowmaterial.Designer.vb">
+      <DependentUpon>frmStockBalance_Rowmaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_MASTER\frmStockBalance_Rowmaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmGRN_Confirmation.Designer.vb">
+      <DependentUpon>frmGRN_Confirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmGRN_Confirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmGRN_connect.Designer.vb">
+      <DependentUpon>frmGRN_connect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmGRN_connect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmLoading_cnt.Designer.vb">
+      <DependentUpon>frmLoading_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmLoading_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmProduct_IN.Designer.vb">
+      <DependentUpon>frmProduct_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmProduct_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmRow_Issue.Designer.vb">
+      <DependentUpon>frmRow_Issue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmRow_Issue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmUnloading_cnt.Designer.vb">
+      <DependentUpon>frmUnloading_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmUnloading_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmWastage_cnt.Designer.vb">
+      <DependentUpon>frmWastage_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_STOCK_TRANSACTION\frmWastage_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmDeposit.Designer.vb">
+      <DependentUpon>frmDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmElec_Commission.Designer.vb">
+      <DependentUpon>frmElec_Commission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmElec_Commission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstanding_Collection.Designer.vb">
+      <DependentUpon>frmOutstanding_Collection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstanding_Collection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstanding_pay.Designer.vb">
+      <DependentUpon>frmOutstanding_pay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstanding_pay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstandin_Collection_cnt.Designer.vb">
+      <DependentUpon>frmOutstandin_Collection_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmOutstandin_Collection_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmsales_Cnt.Designer.vb">
+      <DependentUpon>frmsales_Cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_TRANSACTION\frmsales_Cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Confirmation.Designer.vb">
+      <DependentUpon>frmview_Confirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Confirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Cost.Designer.vb">
+      <DependentUpon>frmview_Cost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Cost.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Customer.Designer.vb">
+      <DependentUpon>frmView_Customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_GRN.Designer.vb">
+      <DependentUpon>frmview_GRN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_GRN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Items_cnt.Designer.vb">
+      <DependentUpon>frmView_Items_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Items_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Loading.Designer.vb">
+      <DependentUpon>frmView_Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Outstanding.Designer.vb">
+      <DependentUpon>frmview_Outstanding.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Outstanding.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_ProductIN.Designer.vb">
+      <DependentUpon>frmView_ProductIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_ProductIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Rowissue.Designer.vb">
+      <DependentUpon>frmview_Rowissue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Rowissue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_sales_cnt.Designer.vb">
+      <DependentUpon>frmView_sales_cnt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_sales_cnt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Supplier.Designer.vb">
+      <DependentUpon>frmView_Supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Unloading.Designer.vb">
+      <DependentUpon>frmView_Unloading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmView_Unloading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Wastage.Designer.vb">
+      <DependentUpon>frmview_Wastage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECT_VIEW\frmview_Wastage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAL\DAL_Distributors.vb" />
+    <Compile Include="DAL\DBEngin.vb" />
+    <Compile Include="DAL\DBEngin1.vb" />
+    <Compile Include="DAL\Email.vb" />
+    <Compile Include="DAL\GlobleVariable.vb" />
+    <Compile Include="DAL\Inventry\DAL_InterLocation.vb" />
+    <Compile Include="DAL\Inventry\DAL_Issue_Items_Distributor.vb" />
+    <Compile Include="DAL\mdlvar1.vb" />
+    <Compile Include="DAL\Payment\DAL_frmMecilleniusrecipt.vb" />
+    <Compile Include="DAL\Payment\DAL_frmWinner.vb" />
+    <Compile Include="DAL\Payment\DL_Control.vb" />
+    <Compile Include="DAL\pln_Module.vb" />
+    <Compile Include="DAL\Quarrys.vb" />
+    <Compile Include="DAL\SetServer_Date.vb" />
+    <Compile Include="DAL\SystemValues.vb" />
+    <Compile Include="delivary_forcast.vb" />
+    <Compile Include="frmLog.designer.vb">
+      <DependentUpon>frmLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.vb" />
+    <Compile Include="MDIMain.Designer.vb">
+      <DependentUpon>MDIMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="myReplace.vb" />
+    <Compile Include="SPL.designer.vb">
+      <DependentUpon>SPL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SPL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Administrator\frmBackup.resx">
+      <DependentUpon>frmBackup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_TO_Z\APPLICATION FORM.resx">
+      <DependentUpon>APPLICATION FORM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_TO_Z\DESIGNATION.resx">
+      <DependentUpon>DESIGNATION.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_TO_Z\EDUCATION_QUALIFICATION.resx">
+      <DependentUpon>EDUCATION_QUALIFICATION.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmCompany_Cnt.resx">
+      <DependentUpon>frmCompany_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmCustomer_Cnt.resx">
+      <DependentUpon>frmCustomer_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmCus_Discount.resx">
+      <DependentUpon>frmCus_Discount.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmDiscount_1.resx">
+      <DependentUpon>frmDiscount_1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmDiscount_2.resx">
+      <DependentUpon>frmDiscount_2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmLocation_Cnt.resx">
+      <DependentUpon>frmLocation_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmRoot_Cnt.resx">
+      <DependentUpon>frmRoot_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT SYSTEM_ADMIN\frmSales_Ref_Cnt.resx">
+      <DependentUpon>frmSales_Ref_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_MASTER\frmElectrician_cnt.resx">
+      <DependentUpon>frmElectrician_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_MASTER\frmGRN_Budget.resx">
+      <DependentUpon>frmGRN_Budget.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_MASTER\frmSupplier_Cnt.resx">
+      <DependentUpon>frmSupplier_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_MASTER\frmVehicle_Cnt.resx">
+      <DependentUpon>frmVehicle_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmBom_Creation.resx">
+      <DependentUpon>frmBom_Creation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmCatogery_cnt.resx">
+      <DependentUpon>frmCatogery_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmItem_cnt.resx">
+      <DependentUpon>frmItem_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmRow_Category_cntvb.resx">
+      <DependentUpon>frmRow_Category_cntvb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmStockBalance_Mobile.resx">
+      <DependentUpon>frmStockBalance_Mobile.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmStockBalance_Product.resx">
+      <DependentUpon>frmStockBalance_Product.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_MASTER\frmStockBalance_Rowmaterial.resx">
+      <DependentUpon>frmStockBalance_Rowmaterial.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmGRN_Confirmation.resx">
+      <DependentUpon>frmGRN_Confirmation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmGRN_connect.resx">
+      <DependentUpon>frmGRN_connect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmLoading_cnt.resx">
+      <DependentUpon>frmLoading_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmProduct_IN.resx">
+      <DependentUpon>frmProduct_IN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmRow_Issue.resx">
+      <DependentUpon>frmRow_Issue.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmUnloading_cnt.resx">
+      <DependentUpon>frmUnloading_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_STOCK_TRANSACTION\frmWastage_cnt.resx">
+      <DependentUpon>frmWastage_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmDeposit.resx">
+      <DependentUpon>frmDeposit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmElec_Commission.resx">
+      <DependentUpon>frmElec_Commission.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmOutstanding_Collection.resx">
+      <DependentUpon>frmOutstanding_Collection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmOutstanding_pay.resx">
+      <DependentUpon>frmOutstanding_pay.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmOutstandin_Collection_cnt.resx">
+      <DependentUpon>frmOutstandin_Collection_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_TRANSACTION\frmsales_Cnt.resx">
+      <DependentUpon>frmsales_Cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_Confirmation.resx">
+      <DependentUpon>frmview_Confirmation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_Cost.resx">
+      <DependentUpon>frmview_Cost.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_Customer.resx">
+      <DependentUpon>frmView_Customer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_GRN.resx">
+      <DependentUpon>frmview_GRN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_Items_cnt.resx">
+      <DependentUpon>frmView_Items_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_Loading.resx">
+      <DependentUpon>frmView_Loading.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_Outstanding.resx">
+      <DependentUpon>frmview_Outstanding.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_ProductIN.resx">
+      <DependentUpon>frmView_ProductIN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_Rowissue.resx">
+      <DependentUpon>frmview_Rowissue.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_sales_cnt.resx">
+      <DependentUpon>frmView_sales_cnt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_Supplier.resx">
+      <DependentUpon>frmView_Supplier.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmView_Unloading.resx">
+      <DependentUpon>frmView_Unloading.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONNECT_VIEW\frmview_Wastage.resx">
+      <DependentUpon>frmview_Wastage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLog.resx">
+      <DependentUpon>frmLog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MDIMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPL.resx">
+      <DependentUpon>SPL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Community Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrative Tools.ico" />
+    <Content Include="kuser.ico" />
+    <None Include="ClassDiagram5.cd" />
+    <None Include="Resources\Google_Wallet-128.png" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
+    <None Include="Resources\kuser.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook2">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSMAPI">
+      <Guid>{20C62CAE-15DA-101B-B9A8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SpeechLib">
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\DBEngine\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
